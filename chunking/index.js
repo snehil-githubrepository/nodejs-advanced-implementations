@@ -22,6 +22,10 @@ function chunk_file(filePath) {
   readStream.on("end", () => {
     console.log("File reading And chunking ended");
   });
+
+  readStream.on("error", (err) => {
+    console.error("Error reading file:", err);
+  });
 }
 
 const filepath = "./read.txt";
